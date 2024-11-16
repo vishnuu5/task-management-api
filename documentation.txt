@@ -1,0 +1,25 @@
+1. Separation of Concerns:
+The task management logic is encapsulated in storage.py (TaskStorage class) to ensure the Flask app (app.py) remains focused on routing and request handling.
+
+2.In-Memory Storage:
+Used a dictionary in TaskStorage for simplicity. A database like SQLite or MongoDB can replace this for production use.
+
+3. Input Validation:
+Validates task input data (e.g., title, description, due date) to ensure the API handles only valid requests.
+
+4. HTTP Status Codes:
+
+201 Created for successful task creation.
+200 OK for successful GET and PUT requests.
+204 No Content for successful DELETE requests.
+404 Not Found for missing resources.
+400 Bad Request for invalid input.
+
+5. Unit Testing:
+Tests API endpoints using Flask's built-in test client for a robust testing strategy.
+
+Assumptions;
+
+The due_date is provided in YYYY-MM-DD format.
+Task IDs are unique UUIDs generated automatically by the system.
+Tasks are initially created with a "pending" status.
